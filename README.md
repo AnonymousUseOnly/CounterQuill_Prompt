@@ -113,3 +113,71 @@ The Writing Assistance Agent (WAA) is an AI-powered assistant designed to integr
 "BrainstormingNotes": "{ BrainstormingNotes }"  
 
 "TextCustomization": " Understand and rewrite based on the user requirment { UserInputRequirement}. Note: The WAA offers users a personalized text customization feature, allowing them to define rewriting requirements independently. Users can specify the desired writing style, tone, or platform-specific considerations to ensure that their counterspeech is well-suited for their intended audience and platform. However, the WAA includes a guard rail to prevent the use of hate speech or inappropriate language. It actively monitors and filters the user’s customization inputs, flagging and blocking any content that violates the principles of respectful and inclusive communication. This guard rail ensures that the personalized text customization feature is used responsibly and does not perpetuate or enable the spread of hate speech or wrong language." }  
+
+# Counterspeech AI Assistant Workflow
+
+## System Architecture
+
+This project consists of four main AI agent components working together to help users develop effective counterspeech responses to hate speech.
+
+```mermaid
+graph TD
+    User[User] --> BGA[Brainstorming Guidance Agent]
+    BGA --> BFA[Brainstorming Feedback Agent]
+    BFA --> WGA[Writing Guidance Agent]
+    WGA --> WAA[Writing Assistance Agent]
+    WAA --> Final[Final Counterspeech]
+```
+
+## Agent Responsibilities
+
+### 1. Brainstorming Guidance Agent (BGA)
+
+The BGA guides users through the initial brainstorming process with three main functions:
+
+- **BGA-1**: Communication and clarification of goals and steps
+- **BGA-2**: Help identify key hate elements in the content
+- **BGA-3**: Encourage reflection on assumptions and stereotypes
+
+### 2. Brainstorming Feedback Agent (BFA)
+
+The BFA provides targeted feedback on the user's analysis:
+
+- **BFA-1**: Corrects user identification of key hate elements
+- **BFA-2**: Provides feedback on user's counterspeech strategies
+
+### 3. Writing Guidance Agent (WGA)
+
+The WGA bridges brainstorming and writing phases:
+
+- **WGA-1**: Uses user reflections as an initial draft
+- **WGA-2**: Incorporates user notes as writing suggestions
+
+### 4. Writing Assistance Agent (WAA)
+
+The WAA helps refine and polish the counterspeech:
+
+- Generates empathetic counterspeech content
+- Utilizes brainstorming notes for personalized generation
+- Provides text customization with guardrails against hate speech
+
+## Process Flow
+
+1. **Initial Interaction**: User engages with the BGA to understand the process
+2. **Hate Speech Analysis**: BGA guides user to identify and highlight problematic elements
+3. **Reflection Phase**: User reflects on assumptions and impacts with BGA-3
+4. **Feedback Loop**: BFA validates user's analysis and provides constructive feedback
+5. **Draft Development**: WGA transforms user's reflections into an initial counterspeech draft
+6. **Refinement**: WAA helps polish the draft with grammar, empathy, and customization options
+7. **Final Output**: User receives a completed counterspeech response
+
+## Implementation Notes
+
+- All agents use JSON formatting for structured responses
+- System includes tutorial videos for user guidance
+- The platform supports highlighting of text for analysis
+- Guardrails prevent generation of inappropriate content
+
+---
+
+This workflow can be integrated into various platforms to provide guided assistance for counterspeech development in response to online hate speech.
